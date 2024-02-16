@@ -42,3 +42,52 @@ $(document).ready(function () {
         });
     });
 });
+
+// $(document).ready(function () {
+//     $('.confirm-delete').on('click', function (e) {
+//         e.preventDefault();
+//         var form = $(this).closest('form');
+//         var name = $(this).data('name');
+//         var redirectUrl = $(this).data('redirect');
+
+//         swal({
+//             title: "Apakah Anda yakin?",
+//             text: "Anda akan menghapus '" + name + "'. Tindakan ini tidak dapat dibatalkan.",
+//             icon: "warning",
+//             buttons: ["Batal", "Ya, hapus!"],
+//             dangerMode: true,
+//         }).then((willDelete) => {
+//             if (willDelete) {
+//                 $.ajax({
+//                     url: form.attr('action'),
+//                     type: 'POST',
+//                     data: {
+//                         _method: 'DELETE', // Menggunakan notasi objek untuk data
+//                         _token: $('meta[name="csrf-token"]').attr('content')
+//                     },
+//                     success: function (response) {
+//                         // Memeriksa apakah respons berisi kunci 'success'
+//                         if (response.success) {
+//                             // Menampilkan popup sukses
+//                             swal("Berhasil!", response.message, "success").then(() => {
+//                                 // Redirect ke URL yang ditentukan
+//                                 window.location.href = redirectUrl;
+//                             });
+//                         } else {
+//                             // Menampilkan pesan kesalahan jika respons tidak berisi kunci 'success'
+//                             swal("Oops!", response.message, "error");
+//                         }
+//                     },
+//                     error: function (xhr, status, error) {
+//                         // Menampilkan pesan kesalahan jika terjadi kesalahan pada permintaan AJAX
+//                         swal("Oops!", "Terjadi kesalahan!", "error");
+//                         console.error(xhr.responseText);
+//                     }
+//                 });
+//             } else {
+//                 swal("Pengguna aman!");
+//             }
+//         });
+//     });
+// });
+

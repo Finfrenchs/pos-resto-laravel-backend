@@ -30,5 +30,10 @@ class DatabaseSeeder extends Seeder
             'phone' => '085879678976',
             'roles' => 'admin',
         ]);
+
+        $this->call([
+            CategorySeeder::class,
+            ProductSeeder::class,
+        ]);
     }
 }

@@ -74,31 +74,65 @@
                                     </div>
                                 @enderror
                             </div>
+
                             <div class="form-group">
                                 <label class="form-label">Category</label>
-                                <div class="selectgroup w-100">
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="category" value="food" class="selectgroup-input"
-                                            @if ($product->category == 'food') checked @endif>
-                                        <span class="selectgroup-button">Food</span>
-                                    </label>
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="category" value="drink" class="selectgroup-input"
-                                            @if ($product->category == 'drink') checked @endif>
-                                        <span class="selectgroup-button">Drink</span>
-                                    </label>
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="category" value="snack" class="selectgroup-input"
-                                            @if ($product->category == 'snack') checked @endif>
-                                        <span class="selectgroup-button">Snack</span>
-                                    </label>
+                                <select class="form-control selectric @error('category_id')
+                                is-invalid
+                                @enderror"
+                                name="category_id">
+                                <option value="">Choose Category</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{$category->id}}"
+                                    {{$category->id == $product->category_id ? 'selected' : ''}}>
+                                    {{$category->name}}</option>
+                                @endforeach
+                                </select>
+                            </div>
 
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="form-control @error('description') is-invalid @enderror" name="description">{{$product->description}}</textarea>
+                                @error('description')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group mb-0">
+                                <label class="form-label w-100">Status</label>
+                                <div class="selectgroup selectgroup-pills">
+                                    <label class="selectgrroup-item">
+                                        <input type="radio" name="status" value="1"
+                                            class="selectgroup-input" {{$product->status == 1 ? 'checked' : ''}}>
+                                        <span class="selectgroup-button">Available</span>
+                                    </label>
+                                    <label class="selectgrroup-item">
+                                        <input type="radio" name="status" value="0"
+                                            class="selectgroup-input" {{$product->status == 0 ? 'checked' : ''}}>
+                                        <span class="selectgroup-button">Unavailable</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-0">
+                                <label class="form-label w-100">Favorite</label>
+                                <div class="selectgroup selectgroup-pills">
+                                    <label class="selectgrroup-item">
+                                        <input type="radio" name="is_favorite" value="1" class="selectgroup-input"
+                                            {{$product->is_favorite == 1 ? 'checked' : ''}}>
+                                        <span class="selectgroup-button">Yes</span>
+                                    </label>
+                                    <label class="selectgrroup-item">
+                                        <input type="radio" name="is_favorite" value="0" class="selectgroup-input"
+                                        {{$product->is_favorite == 0 ? 'checked' : ''}}>
+                                        <span class="selectgroup-button">No</span>
+                                    </label>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label">Current Image</label>
-                                <img src="{{ asset('storage/products/' . $product->image) }}" alt="Product Image"
+                                <img src="{{ asset($product->image) }}" alt="Product Image"
                                     class="img-thumbnail mb-3" style="max-width: 200px;">
                             </div>
 
@@ -127,4 +161,5 @@
 @endsection
 
 @push('scripts')
+
 @endpush
