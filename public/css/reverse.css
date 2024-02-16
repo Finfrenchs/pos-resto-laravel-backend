@@ -2,7 +2,7 @@ body.skin-reverse.sidebar-mini .main-sidebar:after {
   background-color: color(primary);
 }
 body.skin-reverse.sidebar-mini .main-sidebar .sidebar-menu li.active > a {
-  background-color: #fff;
+  background-color: #000000;
   box-shadow: none;
   color: color(primary);
 }
@@ -25,36 +25,36 @@ body.skin-reverse .main-sidebar {
   background-color: color(primary);
 }
 body.skin-reverse .main-sidebar .sidebar-brand a {
-  color: #fff;
+  color: #000000;
 }
 body.skin-reverse .main-sidebar .sidebar-menu li a {
   color: color_lighten(primary, 25%);
 }
 body.skin-reverse .main-sidebar .sidebar-menu li a:hover {
-  background-color: #6070e5;
+  background-color: #ffff00;
 }
 body.skin-reverse .main-sidebar .sidebar-menu li.active a,
 body.skin-reverse .main-sidebar .sidebar-menu li.active a:hover,
 body.skin-reverse .main-sidebar .sidebar-menu li.active ul.dropdown-menu li a:hover,
 body.skin-reverse .main-sidebar .sidebar-menu li.active ul.dropdown-menu li a {
-  background-color: #6070e5;
+  background-color: #ffff00;
 }
 body.skin-reverse .main-sidebar .sidebar-menu li.menu-header {
-  color: #afb7ff;
+  color: #ffeb7d;
 }
 body.skin-reverse .main-sidebar .sidebar-menu li ul.dropdown-menu li a {
   color: color_lighten(primary, 25%);
 }
 body.skin-reverse .main-sidebar .sidebar-menu li ul.dropdown-menu li a:hover {
   background-color: color(primary);
-  color: #fff;
+  color: #000000;
 }
 body.skin-reverse .main-sidebar .sidebar-menu li ul.dropdown-menu li.active a {
-  color: #fff;
+  color: #000000;
 }
 body.skin-reverse .navbar-bg,
 body.skin-reverse .navbar {
-  background-color: #fff;
+  background-color: #000000;
 }
 body.skin-reverse .navbar-bg .nav-link.nav-link-user,
 body.skin-reverse .navbar-bg .nav-link,
